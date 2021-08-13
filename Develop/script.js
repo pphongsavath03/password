@@ -15,7 +15,7 @@ let confirmAlpha;
 let confirmCaps;
 let confirmNums;
 
-
+// creating prompts for password lenght
 function generatePassword() {
     let passLength = (prompt("How many characters would you like the password to contain?"));
 
@@ -24,6 +24,7 @@ function generatePassword() {
         let passLength = (prompt("How many characters would you like the password to contain?"));
     }
 
+    // series of questions for special chars, numbers, letters, and caps
     let confirmSpecial = confirm("Click OK to confirm your password will include special characters.");
     let confirmAlpha = confirm("Click OK to confirm your password will include letters.");
     let confirmCaps = confirm("Click OK to confirm your password will include capital letters.");
