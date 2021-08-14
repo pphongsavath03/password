@@ -30,7 +30,7 @@ let confirmNums;
 function generatePassword() {
     var passLength = (prompt("How many characters would you like your password to contain?"));
 
-   
+
     while (passLength <= 7 || passLength >= 25) {
         alert("Password length must be between 8-24 characters.");
         var passLength = (prompt("How many characters would you like your password to contain?"));
@@ -44,6 +44,7 @@ function generatePassword() {
 
     let pass = []
 
+    // comfirmation of chars selected
     if (confirmSpecial) {
         pass = pass.concat(special)
     }
@@ -71,4 +72,3 @@ function generatePassword() {
     }
     return newPassword;
 }
-
