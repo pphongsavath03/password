@@ -33,8 +33,20 @@ function generatePassword() {
 
     let pass = []
 
-    if (confirmSpecial, confirmAlpha, confirmCaps, confirmNums) {
-        pass = pass.concat(special, alpha, caps, numbers)
+    if (confirmSpecial) {
+        pass = pass.concat(special)
+    }
+
+    if (confirmNums) {
+        pass = pass.concat(numbers)
+    }
+
+    if (confirmAlpha) {
+        pass = pass.concat(alpha)
+    }
+
+    if (confirmCaps) {
+        pass = pass.concat(caps)
     }
 
     console.log(pass)
