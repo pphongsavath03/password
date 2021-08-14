@@ -42,7 +42,7 @@ function generatePassword() {
 
     let newPassword = ""
         // password generator loop  
-    for (let i = 1; i < passLength; i++) {
+    for (let i = 1; i < passLength.length; i++) {
         newPassword = newPassword + pass[Math.floor(Math.random() * pass.length)];
         console.log(newPassword)
     }
