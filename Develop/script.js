@@ -26,10 +26,10 @@ function generatePassword() {
     }
 
     // Determine parameters of password 
-    let confirmSpecial = confirm("Click OK to confirm if you like to add special characters");
-    let confirmNums = confirm("Click OK to confirm if you like to add numbers");
-    let confirmAlpha = confirm("Click OK to confirm if you like to add lowercase letters");
-    let confirmCaps = confirm("Click OK to confirm if you like to add uppercase letters");
+    let confirmSpecial = confirm("Click OK to confirm if you like to add special characters.");
+    let confirmNums = confirm("Click OK to confirm if you like to add numbers.");
+    let confirmAlpha = confirm("Click OK to confirm if you like to add lowercase letters.");
+    let confirmCaps = confirm("Click OK to confirm if you like to add uppercase letters.");
 
     let pass = []
 
