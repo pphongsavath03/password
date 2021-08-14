@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -17,20 +17,20 @@ let confirmNums;
 
 // creating prompts for password lenght
 function generatePassword() {
-    let passLength = (prompt("How many characters would you like the password to contain?"));
+    var passLength = (prompt("How many characters would you like your password to contain?"));
 
-    if (passLength < 7 || passLength > 25) {
+    // Loop if answer is outside the parameters 
+    while (passLength <= 7 || passLength >= 25) {
         alert("Password length must be between 8-24 characters.");
-        let passLength = (prompt("How many characters would you like your password to contain?"));
+        var passLength = (prompt("How many characters would you like your password to contain?"));
     }
 
-    // series of questions for special chars, numbers, letters, and caps
-    let confirmSpecial = confirm("Click OK to confirm your password will include special characters.");
-    let confirmAlpha = confirm("Click OK to confirm your password will include letters.");
-    let confirmCaps = confirm("Click OK to confirm your password will include capital letters.");
-    let confirmNums = confirm("Click OK to confirm your password will include numbers.");
+    // Determine parameters of password 
+    let confirmSpecial = confirm("Click OK to confirm if you would like to include special characters");
+    let confirmNums = confirm("Click OK to confirm if you would like to include numeric characters");
+    let confirmAlpha = confirm("Click OK to confirm if you would like to include lowercase characters");
+    let confirmCaps = confirm("Click OK to confirm if you would like to include uppercase characters");
 
-    //combining arrays
     let pass = []
 
     if (confirmSpecial, confirmAlpha, confirmCaps, confirmNums) {
