@@ -1,6 +1,17 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
+
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+}
+
+// Add event listener
+generateBtn.addEventListener("click", writePassword);
+
 // arrays 
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let special = ["!", "%", "&", ",", "*", "+", "-"];
@@ -49,12 +60,3 @@ function generatePassword() {
     return newPassword;
 }
 
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-}
-
-// Add event listener
-generateBtn.addEventListener("click", writePassword);
