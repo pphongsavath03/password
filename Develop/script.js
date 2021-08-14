@@ -1,7 +1,18 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+}
+
+// Add event listener
+generateBtn.addEventListener("click", writePassword);
+
+// arrays 
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let special = ["!", "%", "&", ",", "*", "+", "-"];
 let alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -15,17 +26,17 @@ let confirmAlpha;
 let confirmCaps;
 let confirmNums;
 
-// creating prompts for password lenght
+// confirm password length
 function generatePassword() {
     var passLength = (prompt("How many characters would you like your password to contain?"));
 
-    // Loop if answer is outside the parameters 
+   
     while (passLength <= 7 || passLength >= 25) {
         alert("Password length must be between 8-24 characters.");
         var passLength = (prompt("How many characters would you like your password to contain?"));
     }
 
-    // Determine parameters of password 
+    // confirm letters, numbers, special chars
     let confirmSpecial = confirm("Click OK to confirm if you like to add special characters.");
     let confirmNums = confirm("Click OK to confirm if you like to add numbers.");
     let confirmAlpha = confirm("Click OK to confirm if you like to add lowercase letters.");
@@ -61,12 +72,3 @@ function generatePassword() {
     return newPassword;
 }
 
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
