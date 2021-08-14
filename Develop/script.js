@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-let special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"];
+let special = ["!", "%", "&", ",", "*", "+", "-"];
 let alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let caps = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -31,22 +31,10 @@ function generatePassword() {
     let confirmNums = confirm("Click OK to confirm your password will include numbers.");
 
     //combining arrays
-    let pass = [];
+    let pass = []
 
-    if (confirmSpecial) {
-        pass = pass.concat(special)
-    }
-
-    if (confirmAlpha) {
-        pass = pass.concat(alpha)
-    }
-
-    if (confirmCaps) {
-        pass = pass.concat(caps)
-    }
-
-    if (confirmNums) {
-        pass = pass.concat(numbers)
+    if (confirmSpecial, confirmAlpha, confirmCaps, confirmNums) {
+        pass = pass.concat(special, alpha, caps, numbers)
     }
 
     console.log(pass)
