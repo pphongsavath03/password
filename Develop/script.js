@@ -24,21 +24,12 @@ function generatePassword() {
         let passLength = (prompt("How many characters would you like your password to contain?"));
     }
 
-    alert("Your password will contain " + passLength + " characters.")
-
     // series of questions for special chars, numbers, letters, and caps
     let confirmSpecial = confirm("Click OK to confirm your password will include special characters.");
     let confirmAlpha = confirm("Click OK to confirm your password will include letters.");
     let confirmCaps = confirm("Click OK to confirm your password will include capital letters.");
     let confirmNums = confirm("Click OK to confirm your password will include numbers.");
 
-    while (confirmSpecial === false && confirmAlpha === false && confirmCaps === false && confirmNums === false) {
-        alert("You must select at least one special character, number, letter, or capital letter.");
-        let confirmSpecial = confirm("Click OK to confirm your password will include special characters.");
-        let confirmAlpha = confirm("Click OK to confirm your password will include letters.");
-        let confirmCaps = confirm("Click OK to confirm your password will include capital letters.");
-        let confirmNums = confirm("Click OK to confirm your password will include numbers.");
-    }
     //combining arrays
     let pass = []
 
@@ -48,10 +39,10 @@ function generatePassword() {
 
     console.log(pass)
 
-    // loop for password
-    let newPassword = ""
 
-    for (let i = 0; i < passLength; i++) {
+    let newPassword = ""
+        // password generator loop  
+    for (let i = 1; i < passLength; i++) {
         newPassword = newPassword + pass[Math.floor(Math.random() * pass.length)];
         console.log(newPassword)
     }
