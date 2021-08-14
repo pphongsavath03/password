@@ -19,10 +19,12 @@ let confirmNums;
 function generatePassword() {
     let passLength = (prompt("How many characters would you like the password to contain?"));
 
-    if (passLength <= 7 || passLength >= 25) {
-        alert("Password lenght must be between 8-24 charaters long. Please Try again.");
-        let passLength = (prompt("How many characters would you like the password to contain?"));
+    while (passLength <= 7 || passLength >= 24) {
+        alert("Password length must be between 8-24 characters.");
+        let passLength = (prompt("How many characters would you like your password to contain?"));
     }
+
+    alert("Your password will contain " + passLength + " characters.")
 
     // series of questions for special chars, numbers, letters, and caps
     let confirmSpecial = confirm("Click OK to confirm your password will include special characters.");
@@ -30,6 +32,13 @@ function generatePassword() {
     let confirmCaps = confirm("Click OK to confirm your password will include capital letters.");
     let confirmNums = confirm("Click OK to confirm your password will include numbers.");
 
+    while (confirmSpecial === false && confirmAlpha === false && confirmCaps === false && confirmNums === false) {
+        alert("You must select at least one special character, number, letter, or capital letter.");
+        let confirmSpecial = confirm("Click OK to confirm your password will include special characters.");
+        let confirmAlpha = confirm("Click OK to confirm your password will include letters.");
+        let confirmCaps = confirm("Click OK to confirm your password will include capital letters.");
+        let confirmNums = confirm("Click OK to confirm your password will include numbers.");
+    }
     //combining arrays
     let pass = []
 
