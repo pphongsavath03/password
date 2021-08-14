@@ -19,7 +19,7 @@ let confirmNums;
 function generatePassword() {
     let passLength = (prompt("How many characters would you like the password to contain?"));
 
-    if (passLength <= 7 || passLength >= 24) {
+    if (passLength <= 7 || passLength >= 25) {
         alert("Password lenght must be between 8-24 charaters long. Please Try again.");
         let passLength = (prompt("How many characters would you like the password to contain?"));
     }
